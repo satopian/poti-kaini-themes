@@ -1,6 +1,6 @@
 <?php
 /*
-  * Template - nee2 by sakots  >> https://poti-k.info/
+  * Template - nee2 by sakots  >> https://pbbs.sakura.ne.jp/poti/
   *
   * potiboard.php(v2.21.4～)のテーマ(テンプレート)設定ファイルです。
   *

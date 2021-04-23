@@ -1,13 +1,13 @@
 <?php
 /*
-  * Template - n5u by sakots  >> https://poti-k.info/
+  * Template - n5u by sakots  >> https://pbbs.sakura.ne.jp/poti/
   *
   * potiboard.php(v2.21.4～)のテーマ(テンプレート)設定ファイルです。
   *
 */
 
 //テーマ(テンプレート)のバージョン
-define('TEMPLATE_VER', "v1.17.1 lot.210306.0");
+define('TEMPLATE_VER', "v1.17.2 lot.210423");
 
 //一般的なメッセージ
 
