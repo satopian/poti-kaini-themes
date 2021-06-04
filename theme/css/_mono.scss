@@ -302,6 +302,9 @@ ul.menu {
     background-color: $th_bg;
   }
 }
+p.page {
+    margin: 8px 0;
+}
 
 //以下レスポンシブ対応
 @media screen and (max-width: 1024px) {
