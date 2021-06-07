@@ -1,4 +1,4 @@
-# POTI-board改二 デフォルトテーマ「MONO」
+# POTI-board EVO デフォルトテーマ「MONO」
 
 スキンの解説と履歴です。  
 Skinnyのタグは[本家](http://skinny.sx68.net/tag/taglist.html)を見ていただくとして、Skinnyの設定項目と変数名の解説を行います。
@@ -99,8 +99,11 @@ Skinnyのタグは[本家](http://skinny.sx68.net/tag/taglist.html)を見てい�
 - def(passflag) - 続きからか描くのpassの設定です。（互換性のために残してあるところでパスワード入力欄を出す消すの切り替えに使われていました。今は常にtrueなので不要）
 - def(newpost_nopassword) - 新規投稿なら削除キーがなくても続きを描く事ができます。のチェックです。
 - `<SIIHELP>` - 特殊タグ。siihelp.phpを呼び出します。→2.6.0で廃止
+- <% def(cheerpj_url)%><% echo(cheerpj_url)%> - CheerpJのJavaScriptのurlが指定されているときは指定urlから呼び出す。
+- <% def(parameter_day) %><% echo(parameter_day)%> - JavaScriptのキャッシュを1日単位でクリアするため、urlパラーメータに日付を付ける。
 
-もとは配列でeachだったが改二では結合された文字列
+
+もとは配列でeachだったが EVOでは結合された文字列
 
 `<% def(palettes) %>`  
 `<% echo(palettes) %>`  
@@ -131,13 +134,38 @@ Skinnyのタグは[本家](http://skinny.sx68.net/tag/taglist.html)を見てい�
 - def(err_mode) - エラー画面のチェックです。
 - echo(mes) - どのようなエラーが出るかのメッセージです。
 
+- <% def(del_page)%> - 以下は管理者削除画面のページングで使用。
+- <% each(del_page)%>
+- <% echo(del_page/no) %>">
+- <% def(del_page/notlink)%>
+
 ### その他
 
 - 下記のような書き方をする事でHTMLに影響を与えないコメントは書くことが出来ます。ただし「展開処理に渡された結果何もしない」という処理を経ているので、コメントとして使えば使うほどページの展開速度は遅くなっていくのでご注意ください。また、複数行にまたがって書くことはできないようです。
 - \<% こんな風にタグ括弧内にコメントを書けますよ %>
 - 複数行の場合、 `<% def(n) %> ～ <% /def %>`をコメントとして使用しています。("n"単独の変数は使用しないためhtmlに書き出されないのを応用)
+- JavaScriptによるmobile判定
 
-## 改から改二へのテーマ(テンプレート)の置換
+```
+<input type="hidden" name="is_mobile" id="is_mobile" value>
+<style id="for_mobile"></style>
+<script>
+function is_mobile() {
+if (navigator.maxTouchPoints && ( window.matchMedia && window.matchMedia('(max-width: 533px)').matches))  return true;
+return false;
+}
+if(is_mobile()){
+	document.getElementById("is_mobile").value = "true";
+	document.getElementById("for_mobile").textContent=".for_pc{display: none;}";
+}
+</script>
+
+```
+マルチタッチでdeviceの幅が533px以下の時は  
+`<input type="hidden" name="is_mobile" id="is_mobile" value>`  
+にtrueが入る。
+
+## 改から EVOへのテーマ(テンプレート)の置換
 
 実は変数が同じなので、ほどんど置換が可能。[メモ](./memo.txt) にまとめています。
 
