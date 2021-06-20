@@ -1,6 +1,6 @@
 <?php
 /*
-  * Template - MONO by sakots  >> https://pbbs.sakura.ne.jp/poti/
+  * Template - MONO by sakots  >> https://github.com/satopian/poti-kaini-themes
   *
   * potiboard.php(v2.21.4～)のテーマ(テンプレート)設定ファイルです。
   *
@@ -125,6 +125,7 @@ define('OTHERFILE', "mono_other.html");
 
 //お絵かきのテンプレートファイル
 define('PAINTFILE', "mono_paint.html");
+// define('PAINTFILE', "chickenpaintpaint.html");
 
 //カタログのテンプレートファイル
 define('CATALOGFILE', "mono_catalog.html");
